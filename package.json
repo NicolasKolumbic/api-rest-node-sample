@@ -1,0 +1,22 @@
+{
+  "name": "api-rest-node-sample",
+  "version": "0.0.0",
+  "description": "Práctico para la materia MODELOS COMPUTACIONALES DE GESTIÓN ADMINISTRATIVA",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --watch ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicolasKolumbic/api-rest-node-sample.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NicolasKolumbic/api-rest-node-sample/issues"
+  },
+  "homepage": "https://github.com/NicolasKolumbic/api-rest-node-sample#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
