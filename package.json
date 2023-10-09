@@ -4,7 +4,7 @@
   "description": "Práctico para la materia MODELOS COMPUTACIONALES DE GESTIÓN ADMINISTRATIVA",
   "main": "index.js",
   "scripts": {
-    "start": "node --watch ."
+    "start": "node ."
   },
   "repository": {
     "type": "git",
