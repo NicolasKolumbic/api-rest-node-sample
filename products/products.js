@@ -1,5 +1,4 @@
 var products = require('../assets/products/products.json');
-var express = require("express");
 
 function deleteProduct(id) {
     return products.filter(function(product) {
@@ -8,8 +7,23 @@ function deleteProduct(id) {
 }
 
 function addProduct(product) {
+    product.id = parseInt(product.id, 10);
+    product.quantity = parseFloat(product.quantity, 10);
+    product.price = parseFloat(product.price, 10);
     products.push(product);
     return products;
+}
+
+function updateProduct(product) {
+    return products.map(function(storedProduct) {
+        if(storedProduct.id === parseInt(product.id, 10)) {
+            product.id = parseInt(product.id, 10);
+            product.quantity = parseFloat(product.quantity, 10);
+            product.price = parseFloat(product.price, 10);
+            return product;
+        }
+        return storedProduct;
+    });
 }
 
 function ProductController(server) {
@@ -25,9 +39,14 @@ function ProductController(server) {
 
     server.post('/product', function(req, res) {
         var product = req.body;
-        console.log(req.body);
         var addedProduct = addProduct(product);
         res.json(addedProduct);
+    });
+
+    server.put('/product', function(req, res) {
+        var product = req.body;
+        var updatedProduct = updateProduct(product);
+        res.json(updatedProduct);
     });
 }
 
