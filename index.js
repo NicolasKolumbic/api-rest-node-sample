@@ -2,6 +2,7 @@ var express = require("express");
 var server = express();
 
 var products = require('./products/products.js');
+var sales = require('./sales/sales.js')
 
 var port = 3005;
 
@@ -14,4 +15,5 @@ server.listen(port, function() {
 
 products(server);
 
+sales(server);
 
